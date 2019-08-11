@@ -11,5 +11,8 @@ app.use('/static', express.static('public'))
 app.get('/',(req,res) => {
     res.render('home');
 });
+app.get('/post',(req,res) => {
+    res.render('post');
+});
 
 app.listen(port,console.log(`Example app listening on port ${port}!`));
