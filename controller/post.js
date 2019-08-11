@@ -1,7 +1,8 @@
 const post = {}
 const mongoose = require('mongoose');
 const postModel = require('../model/post.js');
-mongoose.connect('mongodb://basic-blog:basic-blog123@ds161397.mlab.com:61397/basic-blog', {useNewUrlParser: true});
+const config = require('../config.js');
+mongoose.connect(`mongodb://${config.db.user}:${config.db.pass}@${config.db.url}:${config.db.port}/${config.db.name}`, {useNewUrlParser: true});
 
 
 post.create = (request,callback) => {    
