@@ -12,8 +12,8 @@ post.create = (request,callback) => {
          content : request.content
     });
         
-    return newPost.save().then(() => { 
-        return callback();
+    return newPost.save((err,post) => { 
+        return callback(err,post.id);
     });
 }
 
