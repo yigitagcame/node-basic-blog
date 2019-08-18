@@ -15,7 +15,8 @@ const postController = require('./controller/post.js');
 app.get('/',(req,res) => {
     postController.all((posts) =>{
         res.render('home',{
-            posts: posts
+            posts: posts,
+            page : 'Home'
         });
     })
 });
@@ -23,7 +24,8 @@ app.get('/',(req,res) => {
 app.get('/post/:id',(req,res) => {
     postController.get(req.params.id,(post) => {
         res.render('post',{
-            post: post
+            post: post,
+            page : post.title
         });
     })
 });
